@@ -7,10 +7,10 @@
 
 import Foundation
 
-public class Network {
+public class URLSessionClient {
     public init() {}
     
-    public func request(url: URL, completion: @escaping (Data) -> Void) {        
+    func get(for url: URL, completion: @escaping (Data) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             
             if let error = error {
@@ -23,5 +23,17 @@ public class Network {
         }
         
         dataTask.resume()
+    }
+}
+
+public class Network {
+    private let client: URLSessionClient
+    
+    public init(client: URLSessionClient = URLSessionClient()) {
+        self.client = client
+    }
+    
+    public func request(url: URL, completion: @escaping (Data) -> Void) {        
+        client.get(for: url, completion: completion)
     }
 }
