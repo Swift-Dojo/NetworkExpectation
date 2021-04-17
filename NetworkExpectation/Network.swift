@@ -7,10 +7,14 @@
 
 import Foundation
 
-public class URLSessionClient {
+public protocol NetworkClient {
+    func get(for url: URL, completion: @escaping (Data) -> Void)
+}
+
+public class URLSessionClient: NetworkClient {
     public init() {}
     
-    func get(for url: URL, completion: @escaping (Data) -> Void) {
+    public func get(for url: URL, completion: @escaping (Data) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             
             if let error = error {
@@ -27,9 +31,9 @@ public class URLSessionClient {
 }
 
 public class Network {
-    private let client: URLSessionClient
+    private let client: NetworkClient
     
-    public init(client: URLSessionClient = URLSessionClient()) {
+    public init(client: NetworkClient = URLSessionClient()) {
         self.client = client
     }
     
