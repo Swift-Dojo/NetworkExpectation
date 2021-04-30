@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F254AF06262A5B1600CF5AAA /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254AF05262A5B1600CF5AAA /* NetworkTests.swift */; };
+		F2529D7D2633A9690087323D /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2529D7C2633A9690087323D /* NetworkClientTests.swift */; };
 		F2F9A44326100096003BFB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9A44226100096003BFB94 /* AppDelegate.swift */; };
 		F2F9A44526100096003BFB94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9A44426100096003BFB94 /* SceneDelegate.swift */; };
 		F2F9A44726100096003BFB94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9A44626100096003BFB94 /* ViewController.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F254AF05262A5B1600CF5AAA /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		F2529D7C2633A9690087323D /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		F2F9A43F26100096003BFB94 /* NetworkExpectation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkExpectation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F9A44226100096003BFB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F9A44426100096003BFB94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		F2F9A48526100BF5003BFB94 /* NetworkClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				F254AF05262A5B1600CF5AAA /* NetworkTests.swift */,
+				F2529D7C2633A9690087323D /* NetworkClientTests.swift */,
 				F2F9A48626100BF5003BFB94 /* NetworkEndToEndClientTests.swift */,
 				F2F9A48826100BF5003BFB94 /* Info.plist */,
 			);
@@ -216,8 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254AF06262A5B1600CF5AAA /* NetworkTests.swift in Sources */,
 				F2F9A48726100BF5003BFB94 /* NetworkEndToEndClientTests.swift in Sources */,
+				F2529D7D2633A9690087323D /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

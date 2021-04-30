@@ -7,15 +7,19 @@
 
 import Foundation
 
-public protocol NetworkClient {
-    func get(for url: URL, completion: @escaping (Data) -> Void)
+public protocol URLSessionProtocol {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }
 
-public class URLSessionClient: NetworkClient {
-    public init() {}
+public class Network {
+    private let session: URLSessionProtocol
     
-    public func get(for url: URL, completion: @escaping (Data) -> Void) {
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+    public init(session: URLSessionProtocol) {
+        self.session = session
+    }
+    
+    public func request(url: URL, completion: @escaping (Data) -> Void) {        
+        let dataTask = session.dataTask(with: url) { (data, _, error) in
             
             if let error = error {
                 print("Error en el request: \(error.localizedDescription)")
@@ -27,17 +31,5 @@ public class URLSessionClient: NetworkClient {
         }
         
         dataTask.resume()
-    }
-}
-
-public class Network {
-    private let client: NetworkClient
-    
-    public init(client: NetworkClient = URLSessionClient()) {
-        self.client = client
-    }
-    
-    public func request(url: URL, completion: @escaping (Data) -> Void) {        
-        client.get(for: url, completion: completion)
     }
 }

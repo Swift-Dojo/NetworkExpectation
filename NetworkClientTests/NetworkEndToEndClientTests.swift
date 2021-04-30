@@ -11,7 +11,7 @@ import XCTest
 class NetworkEndToEndClientTests: XCTestCase {
     func test_request_makesAPICall() {
         let url = URL(string: "https://google.com")!
-        let sut = Network()
+        let sut = Network(session: URLSession.shared)
         let exp = expectation(description: "Network client expectation")
         
         sut.request(url: url) { _ in
@@ -21,3 +21,5 @@ class NetworkEndToEndClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 }
+
+extension URLSession: URLSessionProtocol {}
