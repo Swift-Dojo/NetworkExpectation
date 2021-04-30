@@ -22,4 +22,4 @@ class NetworkEndToEndClientTests: XCTestCase {
     }
 }
 
-extension URLSession: URLSessionProtocol {} 
+extension URLSession: URLSessionProtocol {}
